@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship Task 3 | Responsive & Interactive</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a href="#" class="logo">Task<span>3</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#carousel">Carousel</a></li>
+        <li><a href="#api">API Data</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content">
+        <h1 class="hero-title">Web Dev <span>Internship</span> Task 3</h1>
+        <p class="hero-subtitle">Responsive design, interactive components & API integration</p>
+        <a href="#quiz" class="btn btn-primary">Get Started</a>
+      </div>
+    </section>
+
+    <section id="quiz" class="section quiz-section">
+      <div class="container">
+        <h2 class="section-title">Interactive Quiz</h2>
+        <p class="section-desc">Test your knowledge with multiple-choice questions.</p>
+        <div class="quiz-card card">
+          <div class="quiz-progress">
+            <div class="quiz-progress-bar" id="quizProgressBar"></div>
+            <span class="quiz-counter" id="quizCounter">Question 1 of 5</span>
+          </div>
+          <div class="quiz-content" id="quizContent">
+            <h3 class="quiz-question" id="quizQuestion"></h3>
+            <ul class="quiz-options" id="quizOptions"></ul>
+            <button type="button" class="btn btn-secondary" id="quizNext" disabled>Next</button>
+          </div>
+          <div class="quiz-result hidden" id="quizResult">
+            <h3>Quiz Complete!</h3>
+            <p class="quiz-score" id="quizScore"></p>
+            <button type="button" class="btn btn-primary" id="quizRestart">Try Again</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="carousel" class="section carousel-section">
+      <div class="container">
+        <h2 class="section-title">Image Carousel</h2>
+        <p class="section-desc">Swipe or use arrows to browse images.</p>
+        <div class="carousel-card card">
+          <button type="button" class="carousel-btn carousel-prev" aria-label="Previous image">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="carouselTrack">
+              <div class="carousel-slide"><img src="https://picsum.photos/800/500?random=1" alt="Slide 1"></div>
+              <div class="carousel-slide"><img src="https://picsum.photos/800/500?random=2" alt="Slide 2"></div>
+              <div class="carousel-slide"><img src="https://picsum.photos/800/500?random=3" alt="Slide 3"></div>
+              <div class="carousel-slide"><img src="https://picsum.photos/800/500?random=4" alt="Slide 4"></div>
+              <div class="carousel-slide"><img src="https://picsum.photos/800/500?random=5" alt="Slide 5"></div>
+            </div>
+          </div>
+          <button type="button" class="carousel-btn carousel-next" aria-label="Next image">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="api" class="section api-section">
+      <div class="container">
+        <h2 class="section-title">Live API Data</h2>
+        <p class="section-desc">Fetched from public APIs and displayed dynamically.</p>
+        <div class="api-tabs">
+          <button type="button" class="api-tab active" data-api="joke">Joke API</button>
+          <button type="button" class="api-tab" data-api="users">Users API</button>
+          <button type="button" class="api-tab" data-api="weather">Weather API</button>
+        </div>
+        <div class="api-weather-input hidden" id="weatherInput">
+          <label for="weatherCity">City</label>
+          <input type="text" id="weatherCity" placeholder="e.g. London, Delhi, Tokyo" value="London">
+        </div>
+        <div class="api-cards">
+          <div class="api-card card" id="apiCard">
+            <div class="api-loading hidden" id="apiLoading">
+              <div class="spinner"></div>
+              <p>Loading...</p>
+            </div>
+            <div class="api-content" id="apiContent">
+              <p class="api-placeholder">Click a tab or "Fetch" to load data.</p>
+            </div>
+            <button type="button" class="btn btn-primary" id="apiFetch">Fetch Data</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Internship Task 3 — Responsive Design, Quiz, Carousel & API</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
